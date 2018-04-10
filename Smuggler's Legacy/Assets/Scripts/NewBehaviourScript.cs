@@ -5,10 +5,11 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
 
-
-    public GameObject instance;
-    public float velocityX = 1.2f;
+    private GameObject player;
+    public float velocityX = 2.0f;
     public float velocityY = 2.0f;
+
+    public Vector3 playerPos;
     public GameObject bullet;
     Vector2 bulletPos;
     public float fireRate = 0.5f;
@@ -16,12 +17,13 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Start()
     {
-        
+        //player = GameObject.Find("player");
     }
 
     void Update()
     {
-        transform.position += Vector3.right * Time.deltaTime * velocityX;
+
+        playerPos = transform.position += Vector3.right * Time.deltaTime * velocityX;
 
         if (Input.GetKey("w"))
         {
@@ -38,11 +40,28 @@ public class NewBehaviourScript : MonoBehaviour
             fire();
         }
 
+        if (Input.GetKey("d"))
+        {
+            transform.position += ((Vector3.right * 8) * velocityX * Time.deltaTime);
+        }
+
+        if (Input.GetKey("a"))
+        {
+            transform.position += (Vector3.left * (velocityX * 8) * Time.deltaTime);
+        }
+
+
+
+
+
+
     }
-    void fire(){
-        bulletPos = transform.position;
-        bulletPos += new Vector2(1.2f, 0.0f);
-         instance = Instantiate(bullet, bulletPos, Quaternion.identity)as GameObject;
-        Destroy(instance, 3.0f);
+    void fire()
+    {
+        bulletPos = playerPos;
+        bulletPos += new Vector2(1.4f, 0.0f);
+        Instantiate(bullet, bulletPos, Quaternion.identity);
+        
     }
+    
 }
