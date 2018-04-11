@@ -7,6 +7,7 @@ TagManager:
   - turret
   - bullet
   - Turret
+  - wall
   layers:
   - Default
   - TransparentFX
