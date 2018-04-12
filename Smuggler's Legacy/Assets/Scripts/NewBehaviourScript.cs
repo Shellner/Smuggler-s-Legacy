@@ -14,6 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
     Vector2 bulletPos;
     public float fireRate = 0.5f;
     public float nextFire = 0;
+    public float health = 100;
 
     void Start()
     {
@@ -62,6 +63,11 @@ public class NewBehaviourScript : MonoBehaviour
         bulletPos += new Vector2(1.4f, 0.0f);
         Instantiate(bullet, bulletPos, Quaternion.identity);
         
+    }
+
+    public void Harm(float dmg)
+    {
+        health -= dmg;
     }
     
 }
