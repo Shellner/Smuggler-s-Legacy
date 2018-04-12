@@ -33,6 +33,7 @@ public class EnemyTurret : MonoBehaviour
         // transform.LookAt(target);
 
         //Fire at player when in range.
+
         distance = Vector3.Distance(transform.position, target.position);    
 
         if (distance < range && Time.time > _lastShotTime + (3.0f / fireRate))
@@ -45,7 +46,7 @@ public class EnemyTurret : MonoBehaviour
 
     void fireBullet()
     {
-        Vector3 position = new Vector3(transform.position.x, transform.position.y + bulletHeight, transform.position.z);
+        Vector3 position = new Vector3(transform.position.x + (1.4f), transform.position.y + bulletHeight, transform.position.z);
         Instantiate(bullet, position, transform.rotation);
     }
 }

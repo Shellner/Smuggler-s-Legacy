@@ -6,8 +6,8 @@ public class NewBehaviourScript : MonoBehaviour
 {
 
     private GameObject player;
-    public float velocityX = 2.0f;
-    public float velocityY = 2.0f;
+    public  float velocityX = 2.0f;
+    public  float velocityY = 5.0f;
 
     public Vector3 playerPos;
     public GameObject bullet;
@@ -41,10 +41,10 @@ public class NewBehaviourScript : MonoBehaviour
             fire();
         }
 
-        if (Input.GetKey("d"))
+       if (Input.GetKey("d"))
         {
             transform.position += ((Vector3.right * 8) * velocityX * Time.deltaTime);
-        }
+       }
 
         if (Input.GetKey("a"))
         {
@@ -60,7 +60,7 @@ public class NewBehaviourScript : MonoBehaviour
     void fire()
     {
         bulletPos = playerPos;
-        bulletPos += new Vector2(1.4f, 0.0f);
+        bulletPos += new Vector2(1.6f, 0.0f);
         Instantiate(bullet, bulletPos, Quaternion.identity);
         
     }

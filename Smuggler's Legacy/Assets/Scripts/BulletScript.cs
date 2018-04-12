@@ -12,7 +12,7 @@ public class BulletScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -22,8 +22,9 @@ public class BulletScript : MonoBehaviour
         //rb.velocity = new Vector2(velocityX, velocityY);
         Destroy(gameObject, 3.0f);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) //bullet dies on contact with wall
     {
+        //if(collision.gameObject.tag == "wall")
         Destroy(gameObject);
     }
 }
