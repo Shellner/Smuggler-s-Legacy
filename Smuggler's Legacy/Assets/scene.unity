@@ -113,6 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &75430745
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +593,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 --- !u!1001 &379937648
 Prefab:
   m_ObjectHideFlags: 0
@@ -862,6 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityX: 1.2
+<<<<<<< HEAD
 --- !u!114 &459009909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,6 +1107,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+=======
+>>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 --- !u!1 &666223992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,6 +1905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityX: 1.2
+<<<<<<< HEAD
 --- !u!1 &1565370417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,6 +2126,8 @@ PolygonCollider2D:
       - {x: 38.399998, y: -5.3999996}
       - {x: 38.399998, y: -0.0583663}
       - {x: 38.2063, y: -0.0730319}
+=======
+>>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 --- !u!1 &1643404638
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,7 +2168,7 @@ Camera:
   m_GameObject: {fileID: 1643404638}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -2170,7 +2179,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5.285523
   m_Depth: -1
   m_CullingMask:
@@ -2196,8 +2205,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.6960006, y: 0.008, z: -9.873047}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 601822794}
+  m_Children: []
   m_Father: {fileID: 731089272}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2559,8 +2567,11 @@ MonoBehaviour:
   bullet: {fileID: 1299507570018540, guid: 029e348deb7580846b2ad295d2b3c609, type: 2}
   fireRate: 0.1
   nextFire: 1
+<<<<<<< HEAD
   health: 100
   PowerupSound: {fileID: 8300000, guid: 3431a7d172f137a468f3558057bf7b74, type: 3}
+=======
+>>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 --- !u!61 &1946767605
 BoxCollider2D:
   m_ObjectHideFlags: 0

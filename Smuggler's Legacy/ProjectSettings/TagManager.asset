@@ -8,8 +8,12 @@ TagManager:
   - bullet
   - Turret
   - wall
+<<<<<<< HEAD
   - Powerup
   - EnemyShips
+=======
+  - backwall
+>>>>>>> bf1d563885e7054b573579a2ce38758c54320573
   layers:
   - Default
   - TransparentFX
@@ -19,11 +23,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyBullets
+  - Enemies
+  - Players
+  - PlayerBullets
+  - Walls
   - 
   - 
   - 

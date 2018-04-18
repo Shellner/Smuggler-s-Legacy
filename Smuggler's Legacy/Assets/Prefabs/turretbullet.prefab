@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 114073575915359760}
   - component: {fileID: 50457941549051094}
   m_Layer: 0
+  - component: {fileID: 114424784839850290}
+  - component: {fileID: 58647647549199154}
+  m_Layer: 8
   m_Name: turretbullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,11 +60,27 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58647647549199154
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842364007993412}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!114 &114073575915359760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,6 +100,17 @@ MonoBehaviour:
   delay: 0
   weaponSpeed: 0
   player: {fileID: 0}
+--- !u!114 &114424784839850290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842364007993412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33d7df3ed3c5dd449812e8e638ea5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212689647925592094
 SpriteRenderer:
   m_ObjectHideFlags: 1
