@@ -8,6 +8,8 @@ TagManager:
   - bullet
   - Turret
   - wall
+  - Powerup
+  - EnemyShips
   layers:
   - Default
   - TransparentFX

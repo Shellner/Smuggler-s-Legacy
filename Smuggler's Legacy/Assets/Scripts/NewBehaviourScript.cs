@@ -6,6 +6,8 @@ public class NewBehaviourScript : MonoBehaviour
 {
 
     private GameObject player;
+    private AudioSource playerAudioSource;
+
     public  float velocityX = 2.0f;
     public  float velocityY = 5.0f;
 
@@ -15,10 +17,11 @@ public class NewBehaviourScript : MonoBehaviour
     public float fireRate = 0.5f;
     public float nextFire = 0;
     public float health = 100;
+    public AudioClip PowerupSound;
 
     void Start()
     {
-        //player = GameObject.Find("player");
+        playerAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -51,11 +54,6 @@ public class NewBehaviourScript : MonoBehaviour
             transform.position += (Vector3.left * (velocityX * 8) * Time.deltaTime);
         }
 
-
-
-
-
-
     }
     void fire()
     {
@@ -68,5 +66,16 @@ public class NewBehaviourScript : MonoBehaviour
     public void Harm(float dmg)
     {
         health -= dmg;
-    } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Powerup"))
+        {
+            other.gameObject.SetActive(false);
+            playerAudioSource.pitch = Random.Range(0.5f, 1.5f);
+            playerAudioSource.PlayOneShot(PowerupSound, 0.5f);
+            health += 50;
+        }
+    }
 }

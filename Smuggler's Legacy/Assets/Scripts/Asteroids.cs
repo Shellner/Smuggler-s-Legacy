@@ -5,6 +5,7 @@ using UnityEngine;
 public class Asteroids : MonoBehaviour {
 
     public float speed;
+    public float dmg;
 	
 	void Update ()
     {
@@ -15,7 +16,7 @@ public class Asteroids : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<NewBehaviourScript>().Harm(50);
+            other.GetComponent<NewBehaviourScript>().Harm(dmg);
             GetComponent<Animator>().Play("Asteroid", -1, 0f);
         }
     }
