@@ -27,6 +27,7 @@ public class EnemyTurret : MonoBehaviour
         Vector3 relativePos = target.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(relativePos);
         
+        
         rotation.y = 0;
         rotation.x = 0;
        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turretSpeed);

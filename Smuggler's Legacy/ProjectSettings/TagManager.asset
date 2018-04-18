@@ -8,6 +8,7 @@ TagManager:
   - bullet
   - Turret
   - wall
+  - backwall
   layers:
   - Default
   - TransparentFX
@@ -17,11 +18,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyBullets
+  - Enemies
+  - Players
+  - PlayerBullets
+  - Walls
   - 
   - 
   - 
