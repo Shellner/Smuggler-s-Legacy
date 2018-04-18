@@ -19,9 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4929571289911108}
-  - component: {fileID: 114623172897078268}
   m_Layer: 0
-  m_Name: EnemyGun
+  m_Name: LaunchPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,8 +51,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271936109497032}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2447386, y: 3.32, z: 4.328125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.1378145, y: 4.856217, z: 0}
   m_LocalScale: {x: 4.6428347, y: 4.787372, z: 1}
   m_Children:
   - {fileID: 4929571289911108}
@@ -67,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1132625460245708}
   m_LocalRotation: {x: 0, y: 0, z: -0.0002617804, w: 1}
-  m_LocalPosition: {x: -0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.084, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4049941922300374}
@@ -94,30 +93,17 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271936109497032}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6930a3c4bf512c42a2ddd3032fe3d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 4732889906956098, guid: 54d1bb55e4fbf6e42b7607d9e9ce944b, type: 2}
   turretSpeed: 5
   fireRate: 5
   bulletHeight: 0
-  bullet: {fileID: 1842364007993412, guid: 36049703d0b36d542afc259515206d4d, type: 2}
+  bullet: {fileID: 1299507570018540, guid: 029e348deb7580846b2ad295d2b3c609, type: 2}
   range: 20
---- !u!114 &114623172897078268
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1132625460245708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6adb6ac850039a2489d460a5c662dfd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turretbullet: {fileID: 1842364007993412, guid: 36049703d0b36d542afc259515206d4d,
-    type: 2}
 --- !u!114 &114926238604969460
 MonoBehaviour:
   m_ObjectHideFlags: 1

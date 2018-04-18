@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1460202452613026}
   m_LocalRotation: {x: 0.00008726013, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.63, y: 0, z: 0}
-  m_LocalScale: {x: 10.834037, y: 8.206277, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,6 +105,8 @@ MonoBehaviour:
   bullet: {fileID: 1299507570018540, guid: 029e348deb7580846b2ad295d2b3c609, type: 2}
   fireRate: 0.1
   nextFire: 1
+  health: 100
+  PowerupSound: {fileID: 0}
 --- !u!212 &212779675691474616
 SpriteRenderer:
   m_ObjectHideFlags: 1

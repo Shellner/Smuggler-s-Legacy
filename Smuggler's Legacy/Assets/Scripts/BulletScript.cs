@@ -24,7 +24,7 @@ public class BulletScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision) //bullet dies on contact with wall
     {
-        if(collision.enabled)
+        //if(collision.gameObject.tag == "wall")
         Destroy(gameObject);
     }
 }

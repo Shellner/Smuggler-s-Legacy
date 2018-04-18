@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HPTest : MonoBehaviour {
+public class HPTest : MonoBehaviour
+{
     public int hp = 0;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
     private void OnCollisionEnter2D(Collision2D collision) //enemy dies on contact with bullet
     {
         if (collision.gameObject.tag == "bullet")

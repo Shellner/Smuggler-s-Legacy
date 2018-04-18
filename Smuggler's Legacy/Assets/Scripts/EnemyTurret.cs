@@ -26,16 +26,16 @@ public class EnemyTurret : MonoBehaviour
         //Rotate turret to look at player.
         Vector3 relativePos = target.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(relativePos);
-        
-        
+
+
         rotation.y = 0;
         rotation.x = 0;
-       transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turretSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turretSpeed);
         // transform.LookAt(target);
 
         //Fire at player when in range.
 
-        distance = Vector3.Distance(transform.position, target.position);    
+        distance = Vector3.Distance(transform.position, target.position);
 
         if (distance < range && Time.time > _lastShotTime + (3.0f / fireRate))
         {
