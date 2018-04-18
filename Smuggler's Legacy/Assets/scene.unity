@@ -114,6 +114,7 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &75430745
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +596,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> bf1d563885e7054b573579a2ce38758c54320573
+=======
+>>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 --- !u!1001 &379937648
 Prefab:
   m_ObjectHideFlags: 0
@@ -866,6 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityX: 1.2
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &459009909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,6 +1111,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+=======
+>>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 =======
 >>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 --- !u!1 &666223992
@@ -1906,6 +1912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityX: 1.2
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1565370417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,6 +2133,8 @@ PolygonCollider2D:
       - {x: 38.399998, y: -5.3999996}
       - {x: 38.399998, y: -0.0583663}
       - {x: 38.2063, y: -0.0730319}
+=======
+>>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 =======
 >>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 --- !u!1 &1643404638
@@ -2568,8 +2577,11 @@ MonoBehaviour:
   fireRate: 0.1
   nextFire: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   health: 100
   PowerupSound: {fileID: 8300000, guid: 3431a7d172f137a468f3558057bf7b74, type: 3}
+=======
+>>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 =======
 >>>>>>> bf1d563885e7054b573579a2ce38758c54320573
 --- !u!61 &1946767605
