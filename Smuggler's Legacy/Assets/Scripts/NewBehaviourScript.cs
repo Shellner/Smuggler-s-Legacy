@@ -17,6 +17,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float fireRate = 0.5f;
     public float nextFire = 0;
     public float health = 100;
+    public float lives = 3;
     public AudioClip PowerupSound;
 
     void Start()
