@@ -42,7 +42,8 @@ public class EnemyGun : MonoBehaviour {
             bullet.transform.position = transform.position;
 
             Vector2 direction = playerShip.transform.position - bullet.transform.position;
-            bullet.GetComponent<TurretBullet>().SetDirection(direction);
+           // bullet.GetComponent<TurretBullet>().SetDirection(direction);
+           // Some problem with the script above
         }
     }
    
