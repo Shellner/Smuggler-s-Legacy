@@ -4,45 +4,42 @@ using UnityEngine;
 
 public class TurretBullet : MonoBehaviour
 {
-    float speed = 6f;
-    Vector2 _direction;
-    bool isReady = false;
+    public Transform target;
+    public float speed;
+    public Vector2 bulletPos;
+    public Vector3 turretPos;
+    public float angle;
+    //public GameObject player;
+    public float delay = 0.0f;
+    public float weaponSpeed = 0.0f;
+    public NewBehaviourScript player;
+    private Rigidbody2D myrigidbody2d;
+
     // Use this for initialization
     void Start()
     {
+        player = FindObjectOfType<NewBehaviourScript>();
+        myrigidbody2d = GetComponent<Rigidbody2D>();
+        if(player.transform.position.x < transform.position.x)
+        {
+            speed = -speed;
+        }
+        turretPos = transform.position;
 
-    }
-
-    public void SetDirection(Vector2 direction)
-    {
-        _direction = direction.normalized;
-        isReady = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (isReady)
-        {
-            Vector2 position = transform.position;
-            position += _direction * speed * Time.deltaTime;
-            transform.position = position;
-
-        }
-        Destroy(gameObject, 5.0f);
+        //Vector3 relativePos = target.transform.position - transform.position;
+        //angle = Vector3.Angle(target.transform.position, turretPos);
+        myrigidbody2d.velocity = new Vector2(speed, myrigidbody2d.velocity.y);
+        //GetComponent<Rigidbody2D>().velocity = new Vector2(0, 10);
+        Destroy(gameObject, 3.0f);
 
 
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "wall")
-        {
 
-            Destroy(gameObject);
-
-        }
     }
 }
-
+ 
 
