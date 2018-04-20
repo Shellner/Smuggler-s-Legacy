@@ -9,7 +9,7 @@ public class CanvasController : MonoBehaviour {
     public Text livesText;
     public Slider healthSlider;
     public Image Fill;
-    public float playerHealth = 50f;
+    public float playerHealth = 50f; // should be the same as the value of the player
 
     private float lifeMid = 40f;
     private float lifeCritical = 10f;
