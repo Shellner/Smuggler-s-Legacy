@@ -10,27 +10,37 @@ public class BouncyEnemy : MonoBehaviour
     public float moveSpeed = -0.09f;
     private Vector3 startPos;
     private Vector3 v;
+    public float dmg;
     public int hp = 0;
 
     void Start()
     {
-        startPos = transform.position;
-        v = startPos;
+        v = transform.position;
+       
     }
 
     void Update()
     {
 
 
-        v.y = delta * Mathf.Sin(Time.time * speed);
+        v.y += delta * Mathf.Sin(Time.time * speed);
         v.x += moveSpeed;
         transform.position = v;
         transform.Translate(-Vector3.right * speed * Time.deltaTime);
+        v.y -= delta * Mathf.Sin(Time.time * speed);
         //transform.position += Vector3.left * Time.deltaTime * 1.2f;
 
 
 
 
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<NewBehaviourScript>().Harm(dmg);
+            
+        }
     }
 }
     //private void OnCollisionEnter2D(Collision2D collision) //enemy dies on contact with bullet

@@ -24,17 +24,29 @@ public class EnemyTurret : MonoBehaviour
     void Update()
     {
         //Rotate turret to look at player.
-        Vector3 relativePos = target.position - transform.position;
+        Vector3 relativePos = target.position + transform.position;
+
         Quaternion rotation = Quaternion.LookRotation(relativePos);
-        
         rotation.y = 0;
         rotation.x = 0;
-       transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turretSpeed);
-        // transform.LookAt(target);
 
-        //Fire at player when in range.
+        distance = Vector3.Distance(transform.position, target.position);
+        if (distance > range)
+        {
+            rotation.z = 0;
+        }
+        else
+        {
+            Quaternion Realrotation = Quaternion.RotateTowards(rotation, Quaternion.identity, Time.deltaTime * turretSpeed);
 
-        distance = Vector3.Distance(transform.position, target.position);    
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, Realrotation, Time.deltaTime * turretSpeed);
+
+            // transform.LookAt(target);
+
+            //Fire at player when in range.
+        }
+ 
 
         if (distance < range && Time.time > _lastShotTime + (3.0f / fireRate))
         {
@@ -42,6 +54,7 @@ public class EnemyTurret : MonoBehaviour
             //print(Time.time);
             fireBullet();
         }
+   
     }
 
     void fireBullet()

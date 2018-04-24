@@ -10,7 +10,7 @@ public void StartGame()
         SceneManager.LoadScene(1);
     }
 
-    public void ShowCredits()
+public void ShowCredits()
     {
         SceneManager.LoadScene(2);
     }
@@ -18,5 +18,10 @@ public void StartGame()
 public void QuitGame()
     {
         Application.Quit();
+    }
+
+public void ShowMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
