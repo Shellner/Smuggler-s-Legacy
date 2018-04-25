@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114166619885134446}
   m_Layer: 0
   m_Name: Asteroid2
-  m_TagString: Untagged
+  m_TagString: asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,8 +105,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 3
   angleX: -0.1
-  angleY: -0.1
-  rotationSpeed: 200
+  angleY: -0.24957968
+  rotationSpeed: 144.15436
+  change: 2
 --- !u!212 &212281071211650524
 SpriteRenderer:
   m_ObjectHideFlags: 1
