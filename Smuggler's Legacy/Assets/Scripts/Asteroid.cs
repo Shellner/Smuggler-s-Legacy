@@ -8,6 +8,7 @@ public class Asteroid : MonoBehaviour {
     public float angleX;
     public float angleY;
     public float rotationSpeed;
+    public float change = 2;
     // Use this for initialization
     void Start () {
         v = transform.position;
@@ -28,4 +29,5 @@ public class Asteroid : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+   
 }

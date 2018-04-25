@@ -56,7 +56,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
     }
-    void fire()
+    public void fire()
     {
         bulletPos = playerPos;
         bulletPos += new Vector2(1.6f, 0.0f);
