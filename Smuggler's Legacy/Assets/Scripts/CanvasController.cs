@@ -26,6 +26,7 @@ public class CanvasController : MonoBehaviour {
     void Update()
     {
         livesText.text = "x" + GameObject.FindGameObjectWithTag("Player").GetComponent<NewBehaviourScript>().lives;
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<NewBehaviourScript>().health;
         healthSlider.value = playerHealth;
         if (playerHealth <= lifeCritical)
         {
