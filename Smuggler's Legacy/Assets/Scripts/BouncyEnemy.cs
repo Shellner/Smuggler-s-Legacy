@@ -42,15 +42,15 @@ public class BouncyEnemy : MonoBehaviour
             
         }
     }
-}
-    //private void OnCollisionEnter2D(Collision2D collision) //enemy dies on contact with bullet
-    //{
-        //if(collision.gameObject.tag == "bullet")
-        //{
-           // hp += 1;
-         //   if (hp == 3)
-       //         Destroy(gameObject);
 
-     //   }
-   // }
-///}
+    private void OnCollisionEnter2D(Collision2D collision) //enemy dies on contact with bullet
+    {
+        if (collision.gameObject.tag == "bullet")
+        {
+            hp += 1;
+            if (hp == 3)
+                Destroy(gameObject);
+
+        }
+    }
+}

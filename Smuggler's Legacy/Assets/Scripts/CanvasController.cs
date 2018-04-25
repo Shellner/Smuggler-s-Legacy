@@ -9,7 +9,7 @@ public class CanvasController : MonoBehaviour {
     public Text livesText;
     public Slider healthSlider;
     public Image Fill;
-    public float playerHealth = 50f;
+    public float playerHealth = 100f;
 
     private float lifeMid = 40f;
     private float lifeCritical = 10f;
@@ -26,6 +26,7 @@ public class CanvasController : MonoBehaviour {
     void Update()
     {
         livesText.text = "x" + GameObject.FindGameObjectWithTag("Player").GetComponent<NewBehaviourScript>().lives;
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<NewBehaviourScript>().health;
         healthSlider.value = playerHealth;
         if (playerHealth <= lifeCritical)
         {
@@ -40,7 +41,7 @@ public class CanvasController : MonoBehaviour {
             Fill.color = Color.blue;
         }
 
-        playerHealth--;
+       // playerHealth--;
     }
 
 }

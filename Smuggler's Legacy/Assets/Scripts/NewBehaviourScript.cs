@@ -12,8 +12,11 @@ public class NewBehaviourScript : MonoBehaviour
 
     public float velocityX = 2.0f;
     public float velocityY = 5.0f;
+
     public float asteroidDmg;
     public float bulletDmg;
+
+
 
     public Vector3 playerPos;
     public GameObject bullet;
@@ -21,12 +24,15 @@ public class NewBehaviourScript : MonoBehaviour
     public float fireRate = 0.5f;
     public float nextFire = 0;
     public float health = 100;
+    public float fullHealth;
     public float lives = 3;
     public AudioClip PowerupSound;
+    public Transform RespawnPoint;
 
     void Start()
     {
         playerAudioSource = GetComponent<AudioSource>();
+        fullHealth = health;
     }
 
     void Update()
@@ -49,10 +55,10 @@ public class NewBehaviourScript : MonoBehaviour
             fire();
         }
 
-       if (Input.GetKey("d"))
+        if (Input.GetKey("d"))
         {
             transform.position += ((Vector3.right * 8) * velocityX * Time.deltaTime);
-       }
+        }
 
         if (Input.GetKey("a"))
         {
@@ -65,13 +71,42 @@ public class NewBehaviourScript : MonoBehaviour
         bulletPos = playerPos;
         bulletPos += new Vector2(1.6f, 0.0f);
         Instantiate(bullet, bulletPos, Quaternion.identity);
-        
+
     }
 
     public void Harm(float dmg)
     {
+        // make the player blink
         health -= dmg;
+
+        if (health < 1)
+        {
+            // play animation of destroyed ship
+            lives--;
+            health = 1;
+            StartCoroutine(RespawnTime(3));
+        }
     }
+
+    IEnumerator RespawnTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (lives == 0)
+        {
+            // show a game over menu
+        }
+        else
+        {
+            Respawn();
+        }
+    }
+
+    public void Respawn()
+    {
+        transform.position = RespawnPoint.position;
+        health = fullHealth;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

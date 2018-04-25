@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1656071748363648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.69, y: 1.13, z: -0.81822467}
+  m_LocalPosition: {x: 47.69, y: 1.13, z: -0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 4496053625007372}
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adb6ac850039a2489d460a5c662dfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   turretbullet: {fileID: 1935494649471208, guid: 8a5f6fe809fd68b4d9fc160aea9bd32a,
     type: 2}
   range: 20
@@ -262,6 +263,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212334242679274304
+=======
+  delta: 2.335842
+  speed: 3.8086915
+  moveSpeed: -0.07828587
+  dmg: 10
+  hp: 0
+--- !u!212 &212724325437067246
+>>>>>>> e4b8f494b99eae701b8d16957f2d0eb4059b2693
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
