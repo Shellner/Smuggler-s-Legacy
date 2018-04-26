@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
 
     private GameObject player;
     private AudioSource playerAudioSource;
+    private bool invincible = false;
 
     public float velocityX = 2.0f;
     public float velocityY = 5.0f;
+
+    public float asteroidDmg;
+    public float bulletDmg;
+
+
 
     public Vector3 playerPos;
     public GameObject bullet;
@@ -110,5 +117,45 @@ public class NewBehaviourScript : MonoBehaviour
             playerAudioSource.PlayOneShot(PowerupSound, 0.5f);
             health += 50;
         }
+        if (other.gameObject.CompareTag("asteroid") && !invincible)
+        {
+            StartCoroutine("HurtColor");
+            health -= asteroidDmg;
+            invincible = true;
+            Invoke("resetInvulnerability", 0.5f);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "bullet" && !invincible)
+        {
+            StartCoroutine("HurtColor");
+            health -= bulletDmg;
+            invincible = true;
+            Invoke("resetInvulnerability", 0.5f);
+        }
+    }
+
+    void ShitHitsFan()
+    {
+        SceneManager.LoadScene("MainMenu");
+
+    }
+
+
+    void resetInvulnerability()
+    {
+        invincible = false;
+    }
+    IEnumerator HurtColor()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f); //Red, Green, Blue, Alpha/Transparency
+            yield return new WaitForSeconds(.1f);
+            GetComponent<SpriteRenderer>().color = Color.white; //White is the default "color" for the sprite, if you're curious.
+            yield return new WaitForSeconds(.1f);
+        }
     }
 }
+
