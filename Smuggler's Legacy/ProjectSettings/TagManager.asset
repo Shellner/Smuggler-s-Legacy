@@ -11,6 +11,8 @@ TagManager:
   - Powerup
   - EnemyShips
   - asteroid
+  - Backwall
+  - CanvasController
   layers:
   - Default
   - TransparentFX
@@ -23,9 +25,9 @@ TagManager:
   - Wall
   - Player
   - asteroid
-  - 
-  - 
-  - 
+  - Bullet
+  - EnemyBullet
+  - Powerup
   - 
   - 
   - 

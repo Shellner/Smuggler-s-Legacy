@@ -10,13 +10,15 @@ public class EnemyGun : MonoBehaviour
     private float nextFire = 0;
     float distance;
     public float range;
-    public Transform target;
+    private Transform target;
+    //private  target1;
 
     // Use this for initialization
     void Start()
     {
 
-
+       // target1 = GameObject.Find("Player").transform.position;
+        //target = target1;
 
     }
 
@@ -30,8 +32,8 @@ public class EnemyGun : MonoBehaviour
             FireEnemyBullet();
         }
 
-
-        distance = Vector3.Distance(transform.position, target.position);
+        GameObject Player = GameObject.Find("Player");
+        distance = Vector3.Distance(transform.position, Player.transform.position);
 
     }
 

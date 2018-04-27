@@ -13,7 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float velocityX = 2.0f;
     public float velocityY = 5.0f;
 
-    public float asteroidDmg;
+    public float contactDmg;
     public float bulletDmg;
 
 
@@ -29,10 +29,21 @@ public class NewBehaviourScript : MonoBehaviour
     public AudioClip PowerupSound;
     public Transform RespawnPoint;
 
+    private CanvasController canvasController;
+
     void Start()
     {
         playerAudioSource = GetComponent<AudioSource>();
         fullHealth = health;
+        GameObject gameControllerObject = GameObject.FindWithTag("CanvasController");
+        if (gameControllerObject != null)
+        {
+            canvasController = gameControllerObject.GetComponent<CanvasController>();
+        }
+        if (canvasController == null)
+        {
+            Debug.Log("Cannot find 'GameController' script");
+        }
     }
 
     void Update()
@@ -69,7 +80,7 @@ public class NewBehaviourScript : MonoBehaviour
     public void fire()
     {
         bulletPos = playerPos;
-        bulletPos += new Vector2(1.6f, 0.0f);
+        bulletPos += new Vector2(1.8f, 0.0f);
         Instantiate(bullet, bulletPos, Quaternion.identity);
 
     }
@@ -82,9 +93,12 @@ public class NewBehaviourScript : MonoBehaviour
         if (health < 1)
         {
             // play animation of destroyed ship
-            lives--;
-            health = 1;
-            StartCoroutine(RespawnTime(3));
+            Destroy(gameObject);
+            canvasController.GameOver();
+            //  Application.LoadLevel("MainMenu");
+            //lives--;
+            //health = 1;
+            //StartCoroutine(RespawnTime(3));
         }
     }
 
@@ -103,8 +117,11 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void Respawn()
     {
-        transform.position = RespawnPoint.position;
-        health = fullHealth;
+
+        canvasController.GameOver ();
+        //Application.LoadLevel("MainMenu");
+        //  transform.position = RespawnPoint.position;
+        // health = fullHealth;
     }
 
 
@@ -117,10 +134,10 @@ public class NewBehaviourScript : MonoBehaviour
             playerAudioSource.PlayOneShot(PowerupSound, 0.5f);
             health += 50;
         }
-        if (other.gameObject.CompareTag("asteroid") && !invincible)
+        if (other.gameObject.CompareTag("asteroid") && !invincible || other.gameObject.CompareTag("EnemyShips") && !invincible || other.CompareTag("turret") && !invincible)
         {
             StartCoroutine("HurtColor");
-            health -= asteroidDmg;
+            health -= contactDmg;
             invincible = true;
             Invoke("resetInvulnerability", 0.5f);
         }

@@ -7,7 +7,7 @@ public class AlienShipBullet : MonoBehaviour
 
 	
 
-    public float velocityX = 5.0f;
+    public float velocityX = 20.0f;
     public float velocityY = 0;
     Rigidbody2D rb;
 
@@ -22,7 +22,7 @@ public class AlienShipBullet : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(-velocityX, GetComponent<Rigidbody2D>().velocity.y);
         //rb.velocity = new Vector2(velocityX, velocityY);
-        Destroy(gameObject, 5.0f);
+        Destroy(gameObject, 20.0f);
     }
     private void OnCollisionEnter2D(Collision2D collision) //bullet dies on contact with wall
     {
