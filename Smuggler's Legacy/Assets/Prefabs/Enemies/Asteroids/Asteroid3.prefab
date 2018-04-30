@@ -20,12 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4608734853480652}
   - component: {fileID: 212545523865290380}
-  - component: {fileID: 114603295678464014}
   - component: {fileID: 60266777160827028}
   - component: {fileID: 50287223828598654}
-  - component: {fileID: 114939453074839702}
+  - component: {fileID: 114603295678464014}
   - component: {fileID: 114668224367368216}
-  - component: {fileID: 95374536968739650}
   m_Layer: 10
   m_Name: Asteroid3
   m_TagString: asteroid
@@ -116,23 +114,6 @@ PolygonCollider2D:
       - {x: 0.23737383, y: -0.47374344}
       - {x: 0.5316205, y: -0.14899492}
       - {x: 0.5316205, y: -0.11050272}
---- !u!95 &95374536968739650
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295803841233950}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51ae097e08832964c9af6a57bda906b8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114603295678464014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,19 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathTimer: 100
---- !u!114 &114939453074839702
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295803841233950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7ed0702fbe73b4a860ec5151ea4c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpreal: 1
-  scoreValue: 3
 --- !u!212 &212545523865290380
 SpriteRenderer:
   m_ObjectHideFlags: 1

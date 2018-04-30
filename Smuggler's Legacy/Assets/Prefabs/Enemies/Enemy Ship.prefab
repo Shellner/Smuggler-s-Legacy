@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4029353925118682}
   - component: {fileID: 212277485876838496}
-  - component: {fileID: 114511065143771420}
+  - component: {fileID: 114917344021452882}
   m_Layer: 10
-  m_Name: New Sprite
+  m_Name: Launch Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,10 +38,9 @@ GameObject:
   - component: {fileID: 4224985515671076}
   - component: {fileID: 212724325437067246}
   - component: {fileID: 114595765208710654}
-  - component: {fileID: 114219110031533686}
+  - component: {fileID: 114255215601608844}
   - component: {fileID: 60196099140458162}
   - component: {fileID: 114604033717364682}
-  - component: {fileID: 95376375810729134}
   m_Layer: 10
   m_Name: Enemy Ship
   m_TagString: EnemyShips
@@ -56,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1144397108932514}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4, y: -0.4, z: 0.6190059}
+  m_LocalPosition: {x: -1.65, y: -0.67, z: 0.6190059}
   m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1}
   m_Children: []
   m_Father: {fileID: 4224985515671076}
@@ -69,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542762134949662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.69, y: 1.13, z: -0.81822467}
+  m_LocalPosition: {x: 68.98924, y: 4.4195166, z: -0.81822467}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 4029353925118682}
@@ -176,24 +175,7 @@ PolygonCollider2D:
       - {x: 0.74, y: -1.01}
       - {x: 0.78, y: -0.97999996}
       - {x: 0.96, y: -0.89}
---- !u!95 &95376375810729134
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1542762134949662}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51ae097e08832964c9af6a57bda906b8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114219110031533686
+--- !u!114 &114255215601608844
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -201,25 +183,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1542762134949662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7ed0702fbe73b4a860ec5151ea4c8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a4673678c1641543b00d2709f80dc25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hpreal: 3
   scoreValue: 5
---- !u!114 &114511065143771420
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1144397108932514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6adb6ac850039a2489d460a5c662dfd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turretbullet: {fileID: 1935494649471208, guid: 8a5f6fe809fd68b4d9fc160aea9bd32a,
+  explosionAlienship: {fileID: 1401951447029970, guid: cf3697a5b58754b4bbe45607417853c1,
     type: 2}
-  range: 20
+  alienshipGun: {fileID: 1467717046776282, guid: f40d99ff5dda925439181141e41fe739,
+    type: 2}
+  alienshipNose: {fileID: 1542667636578958, guid: a56b3f0e1d0e61c43a3984eb9d6d439a,
+    type: 2}
+  alienshipWing: {fileID: 1390228316543930, guid: 6a20b640e2083d045a191bcf44106827,
+    type: 2}
 --- !u!114 &114595765208710654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,9 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2a9c210dbc8de4e98060579e7af138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delta: 2.6669433
-  speed: 4.344677
-  moveSpeed: -0.071718544
+  delta: 1.5986062
+  speed: 4.278452
+  moveSpeed: -0.07503201
   dmg: 10
 --- !u!114 &114604033717364682
 MonoBehaviour:
@@ -247,6 +223,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathTimer: 25
+--- !u!114 &114917344021452882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1144397108932514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb636e2aec680f45a6388da1aa52772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretbullet: {fileID: 1935494649471208, guid: 8a5f6fe809fd68b4d9fc160aea9bd32a,
+    type: 2}
+  shootsFired: {fileID: 1471259336002888, guid: 6a47bc3e0df211c46b4e945c1968fa53,
+    type: 2}
+  range: 20
 --- !u!212 &212277485876838496
 SpriteRenderer:
   m_ObjectHideFlags: 1

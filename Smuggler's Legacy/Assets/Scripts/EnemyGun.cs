@@ -43,6 +43,7 @@ public class EnemyGun : MonoBehaviour
 
         if (playerShip != null && distance < range && Time.time > _lastShotTime + (3.0f / fireRate))
         {
+
             GameObject bullet = (GameObject)Instantiate(turretbullet);
             bullet.transform.position = transform.position;
 

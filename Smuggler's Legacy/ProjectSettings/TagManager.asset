@@ -13,6 +13,7 @@ TagManager:
   - asteroid
   - Backwall
   - CanvasController
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Bullet
   - EnemyBullet
   - Powerup
-  - 
+  - Bomb
   - 
   - 
   - 

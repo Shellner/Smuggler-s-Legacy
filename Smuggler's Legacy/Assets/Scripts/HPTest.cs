@@ -7,6 +7,7 @@ public class HPTest : MonoBehaviour {
     public int hpreal;
     public int scoreValue;
     private CanvasController canvasController;
+    public GameObject explosionAlienship, turretBody, turretBrains, turretGun, turretLeg, turretNub;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,12 @@ public class HPTest : MonoBehaviour {
         {
             canvasController.addScore(scoreValue);
             Debug.Log("bullet hit");
+            Instantiate (explosionAlienship, transform.position, Quaternion.identity);
+            Instantiate(turretBody, transform.position, Quaternion.identity);
+            Instantiate(turretBrains, transform.position, Quaternion.identity);
+            Instantiate(turretGun, transform.position, Quaternion.identity);
+            Instantiate(turretLeg, transform.position, Quaternion.identity);
+            Instantiate(turretNub, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -36,9 +43,6 @@ public class HPTest : MonoBehaviour {
         if (other.gameObject.tag == "bullet")
         {
             hp -= 1;
-            if (hp <= 0)
-                GetComponent<Animator>().Play("AsteroidExplosion", -1, 0f);
-                Destroy(gameObject);
            
 
         }

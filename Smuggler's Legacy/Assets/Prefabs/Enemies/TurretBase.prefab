@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4620748612199454}
   - component: {fileID: 212977107396505034}
   - component: {fileID: 60048585899807086}
-  - component: {fileID: 114795154789739646}
+  - component: {fileID: 114607301075610644}
   - component: {fileID: 114566225442939788}
   m_Layer: 10
   m_Name: TurretBase
@@ -334,7 +334,7 @@ MonoBehaviour:
   target: {fileID: 0}
   turretSpeed: 4
   range: 12
---- !u!114 &114795154789739646
+--- !u!114 &114607301075610644
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -342,11 +342,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232615893807094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7ed0702fbe73b4a860ec5151ea4c8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 859e10c20ac53d64db3e3c3a70164128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hpreal: 10
   scoreValue: 10
+  TurretExplosion: {fileID: 1328157359695236, guid: 4f9e0877f6b68e04b8983893082bd9ef,
+    type: 2}
+  turretBody: {fileID: 1509460443770338, guid: 6bdca0abcd4c1e247a225daae07c3dd3, type: 2}
+  turretBrains: {fileID: 1784288120064288, guid: d7f854e1882b6c942b8b2572197d5173,
+    type: 2}
+  turretGun: {fileID: 1850811443946280, guid: 2379d06db0498314c8e655657c3f3b2f, type: 2}
+  turretLeg: {fileID: 1146532337874108, guid: 635284f0c1f26624bb4ba7abf76e192b, type: 2}
+  turretNub: {fileID: 1068097131247046, guid: 3d4db7c1548f20d45b4b8747855d859e, type: 2}
 --- !u!114 &114912299122420036
 MonoBehaviour:
   m_ObjectHideFlags: 1
