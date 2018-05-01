@@ -1398,6 +1398,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114912299122420036, guid: 914046f0bd99f214cb5263645eabee16,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1946767607}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 914046f0bd99f214cb5263645eabee16, type: 2}
   m_IsPrefabParent: 0
@@ -1771,6 +1776,91 @@ MonoBehaviour:
   waveWait: 0
   MinSpawnYvalue: -0.01
   MaxSpawnYvalue: 9
+--- !u!1 &834623223 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1542762134949662, guid: 3c1cb148af2c2cb4fb67ba44c3689ca9,
+    type: 2}
+  m_PrefabInternal: {fileID: 240396363}
+--- !u!82 &834623230
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 834623223}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &881444388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,7 +2763,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: bfbe46cd57cd38b4d90351b0cd7b2c4e, type: 3}
+    m_Font: {fileID: 12800000, guid: 18c4478206506cd429ab7f0f874c367b, type: 3}
     m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
@@ -4911,6 +5001,7 @@ MonoBehaviour:
   velocityY: 7
   contactDmg: 10
   bulletDmg: 10
+  dumb: 0
   playerPos: {x: 0, y: 0, z: 0}
   bullet: {fileID: 1299507570018540, guid: 029e348deb7580846b2ad295d2b3c609, type: 2}
   fireRate: 0.1

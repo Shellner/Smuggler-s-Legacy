@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114025534838131174}
   - component: {fileID: 60540366032545088}
   - component: {fileID: 50039784863555640}
-  - component: {fileID: 114059627029065100}
+  - component: {fileID: 114074584727528514}
   - component: {fileID: 114309295315030166}
   m_Layer: 10
   m_Name: Asteroid
@@ -127,10 +127,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 3
   angleX: -0.01
-  angleY: -0.019298036
-  rotationSpeed: 144.0031
+  angleY: -0.0149023235
+  rotationSpeed: 142.88924
   change: 2
---- !u!114 &114059627029065100
+--- !u!114 &114074584727528514
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -138,18 +138,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791047789515678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7ed0702fbe73b4a860ec5151ea4c8e, type: 3}
+  m_Script: {fileID: 11500000, guid: f0b952e253d867c48831cf849d20e0db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hpreal: 1
   scoreValue: 3
-  explosionAlienship: {fileID: 1401951447029970, guid: cf3697a5b58754b4bbe45607417853c1,
+  explosionAsteroid: {fileID: 1356322350673974, guid: ed95d962391510841ab9c81f909ef9e5,
     type: 2}
-  turretBody: {fileID: 0}
-  turretBrains: {fileID: 0}
-  turretGun: {fileID: 0}
-  turretLeg: {fileID: 0}
-  turretNub: {fileID: 0}
+  partAsteroid4: {fileID: 1933626771468308, guid: fb588959a452e1c4faa8d27bece8be55,
+    type: 2}
+  partAsteroid5: {fileID: 1669314543227366, guid: 5c684772b8e554d43a110a4890586da5,
+    type: 2}
 --- !u!114 &114309295315030166
 MonoBehaviour:
   m_ObjectHideFlags: 1

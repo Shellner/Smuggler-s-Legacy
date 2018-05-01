@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114166619885134446}
   - component: {fileID: 60134419835472280}
   - component: {fileID: 50247884767439078}
-  - component: {fileID: 114221533715170042}
+  - component: {fileID: 114852505034020154}
   - component: {fileID: 114335109703203394}
   m_Layer: 10
   m_Name: Asteroid2
@@ -127,30 +127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 3
-  angleX: -0.1
-  angleY: -0.13926001
-  rotationSpeed: 158.47734
+  angleX: -0.01
+  angleY: -0.014001146
+  rotationSpeed: 233.66553
   change: 2
---- !u!114 &114221533715170042
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1345542663920676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7ed0702fbe73b4a860ec5151ea4c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpreal: 1
-  scoreValue: 3
-  explosionAlienship: {fileID: 1401951447029970, guid: cf3697a5b58754b4bbe45607417853c1,
-    type: 2}
-  turretBody: {fileID: 0}
-  turretBrains: {fileID: 0}
-  turretGun: {fileID: 0}
-  turretLeg: {fileID: 0}
-  turretNub: {fileID: 0}
 --- !u!114 &114335109703203394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,6 +143,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathTimer: 100
+--- !u!114 &114852505034020154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345542663920676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06839f6c05710ce429824d664c5a62af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpreal: 1
+  scoreValue: 3
+  explosionAsteroid: {fileID: 1356322350673974, guid: ed95d962391510841ab9c81f909ef9e5,
+    type: 2}
+  partAsteroid1: {fileID: 1315293887069392, guid: ace503a1f9df24145ae230620216d5d2,
+    type: 2}
+  partAsteroid2: {fileID: 1110953254220320, guid: 0df61e588ffd16f428f56c06fd18c3c0,
+    type: 2}
+  partAsteroid3: {fileID: 1616241140527886, guid: 27ac960e63b2e284194f77510c4855c5,
+    type: 2}
 --- !u!212 &212281071211650524
 SpriteRenderer:
   m_ObjectHideFlags: 1
