@@ -11,21 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1271936109497032}
   m_IsPrefabParent: 1
---- !u!1 &1132625460245708
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4929571289911108}
-  m_Layer: 0
-  m_Name: LaunchPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1271936109497032
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,13 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4049941922300374}
+  - component: {fileID: 114169355253198186}
   - component: {fileID: 212160276948674908}
-  - component: {fileID: 114079238876854042}
-  - component: {fileID: 114926238604969460}
-  - component: {fileID: 58286143675520408}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Turret
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,43 +34,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271936109497032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.1378145, y: 4.856217, z: 0}
-  m_LocalScale: {x: 4.6428347, y: 4.787372, z: 1}
-  m_Children:
-  - {fileID: 4929571289911108}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4929571289911108
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1132625460245708}
   m_LocalRotation: {x: 0, y: 0, z: -0.0002617804, w: 1}
-  m_LocalPosition: {x: 0, y: 0.084, z: 0}
+  m_LocalPosition: {x: -0.1, y: 0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4049941922300374}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.03}
---- !u!58 &58286143675520408
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1271936109497032}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
---- !u!114 &114079238876854042
+--- !u!114 &114169355253198186
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -95,27 +49,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271936109497032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6930a3c4bf512c42a2ddd3032fe3d00, type: 3}
+  m_Script: {fileID: 11500000, guid: 6adb6ac850039a2489d460a5c662dfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4732889906956098, guid: 54d1bb55e4fbf6e42b7607d9e9ce944b, type: 2}
-  turretSpeed: 5
-  fireRate: 5
-  bulletHeight: 0
-  bullet: {fileID: 1299507570018540, guid: 029e348deb7580846b2ad295d2b3c609, type: 2}
+  turretbullet: {fileID: 1842364007993412, guid: 36049703d0b36d542afc259515206d4d,
+    type: 2}
   range: 20
---- !u!114 &114926238604969460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1271936109497032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7ed0702fbe73b4a860ec5151ea4c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 10
+  target: {fileID: 0}
 --- !u!212 &212160276948674908
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -151,7 +91,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9852941, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

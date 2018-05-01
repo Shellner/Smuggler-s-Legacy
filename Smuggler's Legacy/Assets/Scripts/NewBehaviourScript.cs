@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
 
     private GameObject player;
     private AudioSource playerAudioSource;
+    private bool invincible = false;
 
-    public  float velocityX = 2.0f;
-    public  float velocityY = 5.0f;
+    public float velocityX = 2.0f;
+    public float velocityY = 5.0f;
+
+    public float contactDmg;
+    public float bulletDmg;
+
+
 
     public Vector3 playerPos;
     public GameObject bullet;
@@ -17,12 +24,26 @@ public class NewBehaviourScript : MonoBehaviour
     public float fireRate = 0.5f;
     public float nextFire = 0;
     public float health = 100;
+    public float fullHealth;
     public float lives = 3;
     public AudioClip PowerupSound;
+    public Transform RespawnPoint;
+
+    private CanvasController canvasController;
 
     void Start()
     {
         playerAudioSource = GetComponent<AudioSource>();
+        fullHealth = health;
+        GameObject gameControllerObject = GameObject.FindWithTag("CanvasController");
+        if (gameControllerObject != null)
+        {
+            canvasController = gameControllerObject.GetComponent<CanvasController>();
+        }
+        if (canvasController == null)
+        {
+            Debug.Log("Cannot find 'GameController' script");
+        }
     }
 
     void Update()
@@ -45,10 +66,10 @@ public class NewBehaviourScript : MonoBehaviour
             fire();
         }
 
-       if (Input.GetKey("d"))
+        if (Input.GetKey("d"))
         {
             transform.position += ((Vector3.right * 8) * velocityX * Time.deltaTime);
-       }
+        }
 
         if (Input.GetKey("a"))
         {
@@ -56,18 +77,53 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
     }
-    void fire()
+    public void fire()
     {
         bulletPos = playerPos;
-        bulletPos += new Vector2(1.6f, 0.0f);
+        bulletPos += new Vector2(1.8f, 0.0f);
         Instantiate(bullet, bulletPos, Quaternion.identity);
-        
+
     }
 
     public void Harm(float dmg)
     {
+        // make the player blink
         health -= dmg;
+
+        if (health < 1)
+        {
+            // play animation of destroyed ship
+            Destroy(gameObject);
+            canvasController.GameOver();
+            //  Application.LoadLevel("MainMenu");
+            //lives--;
+            //health = 1;
+            //StartCoroutine(RespawnTime(3));
+        }
     }
+
+    IEnumerator RespawnTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (lives == 0)
+        {
+            // show a game over menu
+        }
+        else
+        {
+            Respawn();
+        }
+    }
+
+    public void Respawn()
+    {
+
+        canvasController.GameOver ();
+        //Application.LoadLevel("MainMenu");
+        //  transform.position = RespawnPoint.position;
+        // health = fullHealth;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -78,5 +134,45 @@ public class NewBehaviourScript : MonoBehaviour
             playerAudioSource.PlayOneShot(PowerupSound, 0.5f);
             health += 50;
         }
+        if (other.gameObject.CompareTag("asteroid") && !invincible || other.gameObject.CompareTag("EnemyShips") && !invincible || other.CompareTag("turret") && !invincible)
+        {
+            StartCoroutine("HurtColor");
+            health -= contactDmg;
+            invincible = true;
+            Invoke("resetInvulnerability", 0.5f);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "bullet" && !invincible)
+        {
+            StartCoroutine("HurtColor");
+            health -= bulletDmg;
+            invincible = true;
+            Invoke("resetInvulnerability", 0.5f);
+        }
+    }
+
+    void ShitHitsFan()
+    {
+        SceneManager.LoadScene("MainMenu");
+
+    }
+
+
+    void resetInvulnerability()
+    {
+        invincible = false;
+    }
+    IEnumerator HurtColor()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f); //Red, Green, Blue, Alpha/Transparency
+            yield return new WaitForSeconds(.1f);
+            GetComponent<SpriteRenderer>().color = Color.white; //White is the default "color" for the sprite, if you're curious.
+            yield return new WaitForSeconds(.1f);
+        }
     }
 }
+

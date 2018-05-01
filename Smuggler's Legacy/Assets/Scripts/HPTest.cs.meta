@@ -5,7 +5,14 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - explosionAlienship: {fileID: 1401951447029970, guid: cf3697a5b58754b4bbe45607417853c1,
+      type: 2}
+  - turretBody: {instanceID: 0}
+  - turretBrains: {instanceID: 0}
+  - turretGun: {instanceID: 0}
+  - turretLeg: {instanceID: 0}
+  - turretNub: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

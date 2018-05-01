@@ -6,9 +6,9 @@ public class EnemyTurret : MonoBehaviour
 
     public Transform target;
     public float turretSpeed;
-    public float fireRate;
-    public float bulletHeight;
-    public GameObject bullet;
+    //public float fireRate;
+    //public float bulletHeight;
+    //public GameObject bullet;
     public float range;
     float distance;
     private float _lastShotTime = float.MinValue;
@@ -24,30 +24,35 @@ public class EnemyTurret : MonoBehaviour
     void Update()
     {
         //Rotate turret to look at player.
-        Vector3 relativePos = target.position - transform.position;
+        Vector3 relativePos = target.position + transform.position;
+
         Quaternion rotation = Quaternion.LookRotation(relativePos);
-        
         rotation.y = 0;
         rotation.x = 0;
-       transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turretSpeed);
-        // transform.LookAt(target);
 
-        //Fire at player when in range.
-
-        distance = Vector3.Distance(transform.position, target.position);    
-
-        if (distance < range && Time.time > _lastShotTime + (3.0f / fireRate))
+        distance = Vector3.Distance(transform.position, target.position);
+        if (distance > range)
         {
-            _lastShotTime = Time.time;
-            //print(Time.time);
-            fireBullet();
+            rotation.z = 0;
         }
+        else
+        {
+            Quaternion Realrotation = Quaternion.RotateTowards(rotation, Quaternion.identity, Time.deltaTime * turretSpeed);
+
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, Realrotation, Time.deltaTime * turretSpeed);
+
+            // transform.LookAt(target);
+
+            //Fire at player when in range.
+        }
+ 
+
+        
+        
+   
     }
 
-    void fireBullet()
-    {
-        Vector3 position = new Vector3(transform.position.x, transform.position.y + bulletHeight, transform.position.z);
-        Instantiate(bullet, position, transform.rotation);
-    }
+    
 }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour {
 
@@ -9,7 +10,17 @@ public class CanvasController : MonoBehaviour {
     public Text livesText;
     public Slider healthSlider;
     public Image Fill;
-    public float playerHealth = 50f; // should be the same as the value of the player
+    public Text scoretext;
+    private int score;
+    public float playerHealth = 100f;
+    public Text Gameovertext;
+    public Text RestartText;
+    public GameObject RestartButton;
+    public GameObject MainMenuButton;
+    public Vector3 v;
+    public Vector2 v2;
+    private bool gameOver;
+    private bool restart;
 
     private float lifeMid = 40f;
     private float lifeCritical = 10f;
@@ -17,6 +28,12 @@ public class CanvasController : MonoBehaviour {
 
     void Start()
     {
+        gameOver = false;
+        restart = false;
+        RestartText.text = "";
+        Gameovertext.text = "";
+        score = 0;
+        UpdateScore();
         canvasControllerInstance = this;
         healthSlider.wholeNumbers = true;
         healthSlider.minValue = 0f;
@@ -25,7 +42,25 @@ public class CanvasController : MonoBehaviour {
 
     void Update()
     {
+        if (gameOver)
+        {
+            RestartText.text = "What do you you wish to do?";
+            restart = true;
+        }
+        if (restart)
+        {
+            RestartButton.transform.position = v;
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
+
+            MainMenuButton.transform.position = v2;
+        }
+
+
         livesText.text = "x" + GameObject.FindGameObjectWithTag("Player").GetComponent<NewBehaviourScript>().lives;
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<NewBehaviourScript>().health;
         healthSlider.value = playerHealth;
         if (playerHealth <= lifeCritical)
         {
@@ -40,7 +75,33 @@ public class CanvasController : MonoBehaviour {
             Fill.color = Color.blue;
         }
 
-        playerHealth--;
+        // playerHealth--;
     }
+    public void addScore(int ScoreValue)
+    {
+        Debug.Log("add score");
+        score += ScoreValue;
+        UpdateScore();
+    }
+    void UpdateScore()
+    {
+        scoretext.text = "Score: " + score;
+    }
+    public void GameOver()
+    {
+        Gameovertext.text = "Game Over! Your Score was: " + score;
+        gameOver = true;
+        Destroy(scoretext);
+    }
+    public void RestartGame(){
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+        
+
 
 }
