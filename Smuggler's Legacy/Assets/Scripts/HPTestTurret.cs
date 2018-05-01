@@ -9,6 +9,7 @@ public class HPTestTurret : MonoBehaviour
     public int scoreValue;
     private CanvasController canvasController;
     public GameObject TurretExplosion, turretBody, turretBrains, turretGun, turretLeg, turretNub;
+    public float dmg;
 
     // Use this for initialization
     void Start()
@@ -28,7 +29,7 @@ public class HPTestTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp == 0)
+        if (hp <= 0)
         {
             canvasController.addScore(scoreValue);
             Debug.Log("bullet hit");
@@ -56,7 +57,17 @@ public class HPTestTurret : MonoBehaviour
                 Destroy(gameObject);
 
         }
+        else if (other.gameObject.tag == "Bomb")
+        {
+            hp -= 5;
+
+        }else if (other.CompareTag("Player"))
+        {
+            other.GetComponent<NewBehaviourScript>().Harm(dmg);
+
+        }
     }
+   
 
 
 

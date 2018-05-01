@@ -7,6 +7,7 @@ public class TurretBullet : MonoBehaviour
     float speed = 6f;
     Vector2 _direction;
     bool isReady = false;
+    public float dmg;
     // Use this for initialization
     void Start()
     {
@@ -34,13 +35,30 @@ public class TurretBullet : MonoBehaviour
 
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<NewBehaviourScript>().Harm(dmg);
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
 
-            Destroy(gameObject);
+      
+        Destroy(gameObject);
 
         
     }
+   
 }
 

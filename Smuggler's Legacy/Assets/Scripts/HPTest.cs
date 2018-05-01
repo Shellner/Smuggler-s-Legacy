@@ -7,7 +7,8 @@ public class HPTest : MonoBehaviour {
     public int hpreal;
     public int scoreValue;
     private CanvasController canvasController;
-    public GameObject explosionAlienship, turretBody, turretBrains, turretGun, turretLeg, turretNub;
+    public float dmg;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -25,16 +26,10 @@ public class HPTest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (hp == 0)
+        if (hp <= 0)
         {
             canvasController.addScore(scoreValue);
             Debug.Log("bullet hit");
-            Instantiate (explosionAlienship, transform.position, Quaternion.identity);
-            Instantiate(turretBody, transform.position, Quaternion.identity);
-            Instantiate(turretBrains, transform.position, Quaternion.identity);
-            Instantiate(turretGun, transform.position, Quaternion.identity);
-            Instantiate(turretLeg, transform.position, Quaternion.identity);
-            Instantiate(turretNub, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -52,7 +47,14 @@ public class HPTest : MonoBehaviour {
             if (hp <= 0)
                 Destroy(gameObject);
 
-        }
+        }else if (other.gameObject.tag == "Bomb")
+        {
+            hp -= 5;
+        }else if (other.CompareTag("Player"))
+            {
+                other.GetComponent<NewBehaviourScript>().Harm(dmg);
+
+            }
     }
     
 

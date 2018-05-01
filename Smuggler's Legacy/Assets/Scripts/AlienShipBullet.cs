@@ -9,6 +9,7 @@ public class AlienShipBullet : MonoBehaviour
 
     public float velocityX = 20.0f;
     public float velocityY = 0;
+    public float dmg;
     Rigidbody2D rb;
 
     // Use this for initialization
@@ -30,4 +31,34 @@ public class AlienShipBullet : MonoBehaviour
         
         Destroy(gameObject);
     }
+    private void OnCollisionEnter2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<NewBehaviourScript>().Harm(dmg);
+            Destroy(gameObject);
+
+        }
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<NewBehaviourScript>().Harm(dmg);
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
+    }
 }
+

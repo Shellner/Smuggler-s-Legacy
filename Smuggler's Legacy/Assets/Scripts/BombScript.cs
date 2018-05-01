@@ -13,6 +13,8 @@ public class BombScript : MonoBehaviour {
     float rotation = -1;
     public float speed;
     public Rigidbody2D rb2D;
+    public float GradualSpeedIncrease;
+    public float GradualSpeedIncrease2;
     // Use this for initialization
     void Start()
     {
@@ -34,7 +36,9 @@ public class BombScript : MonoBehaviour {
         {
             rb2D.MoveRotation(rb2D.rotation + 0f * Time.fixedDeltaTime);
         }
-       
+
+        velocitY -= GradualSpeedIncrease;
+        velocitX += GradualSpeedIncrease2;
 
         //if (rotationSpeed >= -90) {
         //  transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);

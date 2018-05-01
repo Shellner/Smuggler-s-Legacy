@@ -15,7 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public float contactDmg;
     public float bulletDmg;
-
+    public float dumb;
 
 
     public Vector3 playerPos;
@@ -49,7 +49,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
 
-        playerPos = transform.position += Vector3.right * Time.deltaTime * velocityX;
+        
 
         if (Input.GetKey("w"))
         {
@@ -79,6 +79,7 @@ public class NewBehaviourScript : MonoBehaviour
     }
     public void fire()
     {
+        playerPos = transform.position;
         bulletPos = playerPos;
         bulletPos += new Vector2(1.8f, 0.0f);
         Instantiate(bullet, bulletPos, Quaternion.identity);
@@ -90,7 +91,7 @@ public class NewBehaviourScript : MonoBehaviour
         // make the player blink
         health -= dmg;
 
-        if (health < 1)
+        if (health <= 0)
         {
             // play animation of destroyed ship
             Destroy(gameObject);
@@ -138,6 +139,12 @@ public class NewBehaviourScript : MonoBehaviour
         {
             StartCoroutine("HurtColor");
             health -= contactDmg;
+            invincible = true;
+            Invoke("resetInvulnerability", 0.5f);
+        }else if (other.gameObject.tag == "bullet" && !invincible)
+        {
+            StartCoroutine("HurtColor");
+            health -= bulletDmg;
             invincible = true;
             Invoke("resetInvulnerability", 0.5f);
         }

@@ -28,7 +28,7 @@ public class HPTestEnemyShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp == 0)
+        if (hp <= 0)
         {
             canvasController.addScore(scoreValue);
             Debug.Log("bullet hit");
@@ -52,6 +52,11 @@ public class HPTestEnemyShip : MonoBehaviour
             hp -= 100;
             if (hp <= 0)
                 Destroy(gameObject);
+
+        }
+        else if (other.gameObject.tag == "Bomb")
+        {
+            hp -= 5;
 
         }
     }

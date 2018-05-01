@@ -26,11 +26,13 @@ public class FiringBomb : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        playerPos = transform.position += Vector3.right * Time.deltaTime * velocityX;
+        
 
     }
     public void startFire()
     {
+
+        playerPos = transform.position;
         nextFire = Time.time + fireRate;
         fireBomb();
 
