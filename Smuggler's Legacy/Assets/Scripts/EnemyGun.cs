@@ -6,7 +6,7 @@ public class EnemyGun : MonoBehaviour
 {
     public GameObject turretbullet;
     private float _lastShotTime = float.MinValue;
-    private float fireRate = 1.5f;
+    public float fireRate = 1.5f;
     private float nextFire = 0;
     float distance;
     public float range;

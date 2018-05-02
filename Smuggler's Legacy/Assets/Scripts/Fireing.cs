@@ -24,12 +24,11 @@ public class Fireing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+      playerPos = transform.position;
 
     }
     public void startFire()
     {
-        playerPos = transform.position;
-
         nextFire = Time.time + fireRate;
         fire();
     }

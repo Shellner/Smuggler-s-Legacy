@@ -16,7 +16,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float contactDmg;
     public float bulletDmg;
     public float dumb;
-
+    public float TentacleDmg;
 
     public Vector3 playerPos;
     public GameObject bullet;
@@ -89,9 +89,14 @@ public class NewBehaviourScript : MonoBehaviour
     public void Harm(float dmg)
     {
         // make the player blink
-        health -= dmg;
-
-        if (health <= 0)
+        if (health > 0 && !invincible)
+        {
+            health -= dmg;
+            StartCoroutine("HurtColor");
+            invincible = true;
+            Invoke("resetInvulnerability", 0.5f);
+        }
+        else if (health <= 0)
         {
             // play animation of destroyed ship
             Destroy(gameObject);
@@ -134,13 +139,6 @@ public class NewBehaviourScript : MonoBehaviour
             playerAudioSource.pitch = Random.Range(0.5f, 1.5f);
             playerAudioSource.PlayOneShot(PowerupSound, 0.5f);
             health += 50;
-        }
-        if (other.gameObject.CompareTag("asteroid") && !invincible || other.gameObject.CompareTag("EnemyShips") && !invincible || other.CompareTag("turret") && !invincible)
-        {
-            StartCoroutine("HurtColor");
-            health -= contactDmg;
-            invincible = true;
-            Invoke("resetInvulnerability", 0.5f);
         }else if (other.gameObject.tag == "bullet" && !invincible)
         {
             StartCoroutine("HurtColor");
@@ -155,6 +153,12 @@ public class NewBehaviourScript : MonoBehaviour
         {
             StartCoroutine("HurtColor");
             health -= bulletDmg;
+            invincible = true;
+            Invoke("resetInvulnerability", 0.5f);
+        }else if (collision.gameObject.tag == "Tentacle" && !invincible)
+        {
+            StartCoroutine("HurtColor");
+            health -= TentacleDmg;
             invincible = true;
             Invoke("resetInvulnerability", 0.5f);
         }

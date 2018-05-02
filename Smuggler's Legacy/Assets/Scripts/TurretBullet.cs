@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurretBullet : MonoBehaviour
 {
-    float speed = 6f;
+    public float speed;
     Vector2 _direction;
     bool isReady = false;
     public float dmg;

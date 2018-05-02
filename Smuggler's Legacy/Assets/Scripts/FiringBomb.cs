@@ -20,18 +20,16 @@ public class FiringBomb : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
 
     }
     public void startFire()
     {
-
         playerPos = transform.position;
         nextFire = Time.time + fireRate;
         fireBomb();

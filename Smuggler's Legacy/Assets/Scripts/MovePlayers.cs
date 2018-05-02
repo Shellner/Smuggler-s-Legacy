@@ -2,11 +2,13 @@
 using System.Collections;
 public class MovePlayers : MonoBehaviour
 {
-    public float moveSpeed = 05f;
+    public float moveSpeed;
     public VJHandler jsMovement;
+    public float movement;
 
     private Vector3 direction;
     private float xMin, xMax, yMin, yMax;
+    public Vector3 deda;
 
     void Update()
     {
@@ -15,9 +17,13 @@ public class MovePlayers : MonoBehaviour
 
         if (direction.magnitude != 0)
         {
-
-            transform.position += direction * moveSpeed;
-          //  transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), Mathf.Clamp(transform.position.y, yMin, yMax), 0f);//to restric movement of player
+            GetComponent<Rigidbody2D>().velocity = moveSpeed * direction;
+           
+            //  transform.position += direction * moveSpeed;
+            //  transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), Mathf.Clamp(transform.position.y, yMin, yMax), 0f);//to restric movement of player
+        }else if (direction == deda)
+        {
+            GetComponent<Rigidbody2D>().velocity = 0 * direction;
         }
     }
 

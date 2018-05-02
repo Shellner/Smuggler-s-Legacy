@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour {
 
@@ -16,9 +15,7 @@ public class CanvasController : MonoBehaviour {
     public Text Gameovertext;
     public Text RestartText;
     public GameObject RestartButton;
-    public GameObject MainMenuButton;
     public Vector3 v;
-    public Vector2 v2;
     private bool gameOver;
     private bool restart;
 
@@ -44,7 +41,7 @@ public class CanvasController : MonoBehaviour {
     {
         if (gameOver)
         {
-            RestartText.text = "What do you you wish to do?";
+            RestartText.text = "press to restart";
             restart = true;
         }
         if (restart)
@@ -55,7 +52,6 @@ public class CanvasController : MonoBehaviour {
                 Application.LoadLevel(Application.loadedLevel);
             }
 
-            MainMenuButton.transform.position = v2;
         }
 
 
@@ -95,11 +91,6 @@ public class CanvasController : MonoBehaviour {
     }
     public void RestartGame(){
         Application.LoadLevel(Application.loadedLevel);
-    }
-
-    public void MainMenu()
-    {
-        SceneManager.LoadScene(0);
     }
         
 
